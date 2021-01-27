@@ -108,7 +108,7 @@ int avr_client_num_builtins() {
 }
 
 int avr_channels_num(char **channels){
-  return sizeof(channels)/ sizeof(char );
+  return sizeof(channels)/ sizeof(char *);
 }
 
 int avr_get_conf_switch(char **args, char **channels){
