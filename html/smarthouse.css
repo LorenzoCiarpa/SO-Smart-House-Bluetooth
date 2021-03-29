@@ -1,0 +1,37 @@
+input{
+  width:30px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+input#set-name{
+  width:75%;
+  height: 40px;
+  border-width: 2px;
+  border-color: black;
+  border-radius: 180px;
+}
+
+button.name-device{
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.main-title{
+  margin-left: 40%;
+}
+
+.set-name{
+  margin-left: 100px;
+}
+
+.invia-pwm{
+  margin-left:10px;
+  padding-left: :20px;
+}

@@ -8,11 +8,11 @@
  int serial_init(int fd, int speed, int parity){
          struct termios tty;
          memset (&tty, 0, sizeof(tty));  //init tty mem with 0
+
          if (tcgetattr (fd, &tty) != 0){
-                 printf("error %d from tcgetattr", errno);
+                 printf("error %d from tcgetattr\n", errno);
                  return -1;
          }
-
          //setting input/output speed
          cfsetospeed (&tty, speed);
          cfsetispeed (&tty, speed);
@@ -36,7 +36,7 @@
          tty.c_cflag &= ~CRTSCTS;
 
          if (tcsetattr (fd, TCSANOW, &tty) != 0){
-                 printf("error %d from tcsetattr", errno);
+                 printf("error %d from tcsetattr\n", errno);
                  return -1;
          }
          return 0;
@@ -46,7 +46,7 @@
          struct termios tty;
          memset (&tty, 0, sizeof tty);
          if (tcgetattr (fd, &tty) != 0){
-                 printf("error %d from tggetattr", errno);
+                 printf("error %d from tggetattr\n", errno);
                  return;
          }
 
@@ -54,5 +54,5 @@
          tty.c_cc[VTIME] = 5;            // 0.5 seconds read timeout
 
          if (tcsetattr (fd, TCSANOW, &tty) != 0)
-                 printf("error %d setting term attributes", errno);
+                 printf("error %d setting term attributes\n", errno);
  }

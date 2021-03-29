@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="smarthouse.js" charset="utf-8"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <link rel="stylesheet" href="smarthouse.css">
+
+    <title>SmartHouse WebServer</title>
+  </head>
+  <body>
+    <div class="menu">
+        <div class="menu-bar">
+          <div class="logo">
+          </div>
+          <div class="nav-menu">
+          </div>
+        </div>
+    </div>
+
+    <div class="main">
+      <div class="main-title">
+        <h1>Scegli il nome del device</h1>
+      </div>
+      <div class="set-name">
+        <input type="text" name="set-name" id=set-name value="">
+        <button class="name-device" onclick="setName('set-name')" type="submit" name="set-name">Invia</button>
+      </div>
+      <table class="tabella">
+        <tr>
+          <th>VOID</th>
+          <th><h3>Value</h3></th>
+          <th><h3>Accendi</h3></th>
+        </tr>
+        <tr>
+          <th>Switch_0</th>
+          <th id="value_switch_0">1</th>
+          <th><button onclick="setDigital('switch_0')" type="button" id="switch_0">OFF</button></th>
+        </tr>
+        <tr>
+          <th>Switch_1</th>
+          <th id="value_switch_1">1</th>
+          <th><button onclick="setDigital('switch_1')" type="button" id="switch_1">OFF</button></th>
+
+        </tr>
+        <tr>
+          <th>Switch_2</th>
+          <th id="value_switch_2">1</th>
+          <th><button onclick="setDigital('switch_2')" type="button" id="switch_2">OFF</button></th>
+        </tr>
+        <tr>
+          <th>Switch_3</th>
+          <th id="value_switch_3">1</th>
+          <th><button onclick="setDigital('switch_3')" type="button" id="switch_3">OFF</button></th>
+        </tr>
+        <tr>
+          <th>PWM_4</th>
+          <th id="value_switch_4">1</th>
+          <th>
+              <input type="text" name="switch_4" id="switch_4" value="0">
+              <button onclick="setPwm('switch_4')" type="submit" name="Submit_4">Invia</button>
+          </th>
+          <!--<th><p>Min 0 (HIGH), Max 255(LOW)</p></th>-->
+        </tr>
+        <tr>
+          <th>PWM_5</th>
+          <th id="value_switch_5">1</th>
+          <th>
+            <input type="text" name="switch_5" id="switch_5" value="0">
+            <button onclick="setPwm('switch_5')" type="submit" name="Submit_5">Invia</button>
+          </th>
+
+        </tr>
+        <tr>
+          <th>PWM_6</th>
+          <th id="value_switch_6">1</th>
+          <th>
+            <input type="text" name="switch_6" id="switch_6" value="0">
+            <button onclick="setPwm('switch_6')" type="submit" name="Submit_6">Invia</button>
+          </th>
+        </tr>
+        <tr>
+          <th>PWM_7</th>
+          <th id="value_switch_7">1</th>
+          <th>
+            <input type="text" name="switch_7" id="switch_7" value="0">
+            <button onclick="setPwm('switch_7')" type="submit" name="Submit_7">Invia</button>
+          </th>
+        </tr>
+
+        <tr>
+          <th>Digital_IN_0</th>
+          <th id="value_digital_in_0">1</th>
+          <th><button onclick="getDigital('digital_in_0')" type="submit" name="Submit_digital_0">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Digital_IN_1</th>
+          <th id="value_digital_in_1">1</th>
+          <th><button onclick="getDigital('digital_in_1')" type="submit" name="Submit_digital_1">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Digital_IN_2</th>
+          <th id="value_digital_in_2">1</th>
+          <th><button onclick="getDigital('digital_in_2')" type="submit" name="Submit_digital_2">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Digital_IN_3</th>
+          <th id="value_digital_in_3">1</th>
+          <th><button onclick="getDigital('digital_in_3')" type="submit" name="Submit_digital_3">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Digital_IN_4</th>
+          <th id="value_digital_in_4">1</th>
+          <th><button onclick="getDigital('digital_in_4')" type="submit" name="Submit_digital_4">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Digital_IN_5</th>
+          <th id="value_digital_in_5">1</th>
+          <th><button onclick="getDigital('digital_in_5')" type="submit" name="Submit_digital_5">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Digital_IN_6</th>
+          <th id="value_digital_in_6">1</th>
+          <th><button onclick="getDigital('digital_in_6')" type="submit" name="Submit_digital_6">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Digital_IN_7</th>
+          <th id="value_digital_in_7">1</th>
+          <th><button onclick="getDigital('digital_in_7')" type="submit" name="Submit_digital_7">Invia</button></th>
+        </tr>
+
+        <tr>
+          <th>Analog_IN_0</th>
+          <th id="value_analog_in_0">1</th>
+          <th><button onclick="getAnalog('analog_in_0')" type="submit" name="Submit_digital_0">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Analog_IN_1</th>
+          <th id="value_analog_in_1">1</th>
+          <th><button onclick="getAnalog('analog_in_1')" type="submit" name="Submit_digital_1">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Analog_IN_2</th>
+          <th id="value_analog_in_2">1</th>
+          <th><button onclick="getAnalog('analog_in_2')" type="submit" name="Submit_digital_2">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Analog_IN_3</th>
+          <th id="value_analog_in_3">1</th>
+          <th><button onclick="getAnalog('analog_in_3')" type="submit" name="Submit_digital_3">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Analog_IN_4</th>
+          <th id="value_analog_in_4">1</th>
+          <th><button onclick="getAnalog('analog_in_4')" type="submit" name="Submit_digital_4">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Analog_IN_5</th>
+          <th id="value_analog_in_5">1</th>
+          <th><button onclick="getAnalog('analog_in_5')" type="submit" name="Submit_digital_5">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Analog_IN_6</th>
+          <th id="value_analog_in_6">1</th>
+          <th><button onclick="getAnalog('analog_in_6')" type="submit" name="Submit_digital_6">Invia</button></th>
+        </tr>
+        <tr>
+          <th>Analog_IN_7</th>
+          <th id="value_analog_in_7">1</th>
+          <th><button onclick="getAnalog('analog_in_7')" type="submit" name="Submit_digital_7">Invia</button></th>
+        </tr>
+
+      </table>
+    </div>
+    <p id="msgBox"></p>
+  </body>
+</html>
